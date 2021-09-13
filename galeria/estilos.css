@@ -1,0 +1,115 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+* {margin:0;padding:0;border:0 none; position: relative;}
+html {
+  
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+	background: url("Imagenes/fondo1.jpg");
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+.galeria {
+  width: 900vw;
+  margin-top: 10vh;
+  transition: transform .7s linear;
+}
+.galeria label {
+  display: inline-block;
+  width: 50vw;
+  margin-right: 10vw;
+}
+img {
+  max-width: 100%;
+}
+p label {
+  background:#C6C504;
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .4s;
+  border: 0rem solid #7d87ae;
+}
+#uno:checked ~ p [for='uno'],
+#dos:checked ~ p [for='dos'],
+#tres:checked ~ p [for='tres'],
+#cuatro:checked ~ p [for='cuatro'],
+#cinco:checked ~ p [for='cinco'],
+#seis:checked ~ p [for='seis'],
+#siete:checked ~ p [for='siete'],
+#ocho:checked ~ p [for='ocho'],
+#nueve:checked ~ p [for='nueve'] {
+  border: .7rem solid #7d87ae;
+}
+
+#uno:checked ~ .galeria {transform: translateX(25vw);}
+#dos:checked ~ .galeria {transform: translateX(-35vw)}
+#tres:checked ~ .galeria {transform: translateX(-95vw)}
+#cuatro:checked ~ .galeria {transform: translateX(-155vw)}
+#cinco:checked ~ .galeria {transform: translateX(-220vw)}
+#seis:checked ~ .galeria {transform: translateX(-280vw)}
+#siete:checked ~ .galeria {transform: translateX(-340vw)}
+#ocho:checked ~ .galeria {transform: translateX(-400vw)}
+#nueve:checked ~ .galeria {transform: translateX(-460vw)}
+
+#uno:checked ~ .galeria,
+#dos:checked ~ .galeria article,
+#tres:checked ~ .galeria label,
+#cuatro:checked ~ .galeria img {
+  animation: blured .7s;
+}
+#cinco:checked ~ .galeria,
+#seis:checked ~ .galeria article,
+#siete:checked ~ .galeria label,
+#ocho:checked ~ .galeria img {
+  animation: blur .7s;
+}
+#nueve:checked ~ .galeria {animation: blurr .7s;}
+@keyframes blured {
+  0%,100% {
+    filter: url(#svg-blur);
+  }
+}
+@keyframes blur {
+  0%,100% {
+    filter: url(#svg-blur);
+  }
+}
+@keyframes blurr {
+  0%,100% {
+    filter: url(#svg-blur);
+  }
+}
+
+
+
+
+p {
+  text-align: center;
+  margin-top: 1rem;
+  color: #7d87ae;
+}
+.hide {
+  display: none;
+}
+
+header {
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  background-color: #F2F2F2;
+  padding: 20px;
+}
+
+header p {
+  margin: 0px;
+}
+
+header p:last-child {
+  color: #BE3F48;
+}
